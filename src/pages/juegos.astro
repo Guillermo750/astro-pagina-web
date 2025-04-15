@@ -1,54 +1,25 @@
 ---
+/*IMPORTAMOS LOS ARCHIVOS Y LAS HOJAS DE ESTILOS DE TAILWINDS PARA QUE FUNCIONE*/
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Game  from '../components/Game.astro';
+import '../styles/global.css';
 
-const juegos = [
-  {
-    href: '/juegos/',
-    title: '',
-    body: '',
-    imagen: '/assets/'
-  },
-  {
-    href: '/juegos/juego2',
-    title: 'El Enigma 2',
-    body: 'Resuelve misterios y desafíos emocionantes.',
-    imagen: '/assets/juego2.png'
-  },
-  {
-    href: '/juegos/',
-    title: '',
-    body: 'Pon a prueba tu mente táctica en batallas intensas.',
-    imagen: '/assets/'
-  },
-  {
-    href: '/juegos/',
-    title: '',
-    body: '',
-    imagen: '/assets/'
-  },
-  {
-    href: '/juegos/',
-    title: '',
-    body: '',
-    imagen: '/assets/'
-  },
-  {
-    href: '/juegos/',
-    title: '',
-    body: '',
-    imagen: '/assets/'
-  },
-];
+// Importa tus imágenes si están en src/assets
+import imagenJuego1 from '../assets/nintendoswitchzelda-768x432.webp'; // Reemplaza con las rutas de tus imágenes de juego
+import imagenJuego2 from '../assets/juego2.jpg';
+import imagenJuego3 from '../assets/juego3.jpg';
+// ... importa todas las imágenes de tus juegos
+
 ---
 
 <Layout title="Nuestros Juegos">
-  <main class="py-8 max-w-4xl mx-auto">
-    <h1 class="text-3xl font-bold text-center mb-6">¡Bienvenido al Futuro del Gaming!</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {juegos.map(juego => (
-        <Card href={juego.href} title={juego.title} body={juego.body} imagen={juego.imagen} />
-      ))}
-    </div>
-  </main>
+
+  <Game 
+    title="Nintendo Switch: La diversión nunca termina"
+    body="Descubre la versatilidad de Nintendo Switch, la consola que te permite jugar en casa o en cualquier lugar. Con una biblioteca de juegos variada, desde grandes éxitos hasta títulos indie, hay algo para todos los gustos."
+    image={imagenJuego1.src}
+  />
+
+  <!-- CARD DE TEXTO + IMÁGENES -->
+
 </Layout>
