@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+const juegos = [
+  {
+    href: '/juegos/',
+    title: '',
+    body: '',
+    imagen: '/assets/'
+  },
+  {
+    href: '/juegos/juego2',
+    title: 'El Enigma 2',
+    body: 'Resuelve misterios y desafíos emocionantes.',
+    imagen: '/assets/juego2.png'
+  },
+  {
+    href: '/juegos/',
+    title: '',
+    body: 'Pon a prueba tu mente táctica en batallas intensas.',
+    imagen: '/assets/'
+  },
+  {
+    href: '/juegos/',
+    title: '',
+    body: '',
+    imagen: '/assets/'
+  },
+  {
+    href: '/juegos/',
+    title: '',
+    body: '',
+    imagen: '/assets/'
+  },
+  {
+    href: '/juegos/',
+    title: '',
+    body: '',
+    imagen: '/assets/'
+  },
+];
+---
+
+<Layout title="Nuestros Juegos">
+  <main class="py-8 max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-center mb-6">¡Bienvenido al Futuro del Gaming!</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {juegos.map(juego => (
+        <Card href={juego.href} title={juego.title} body={juego.body} imagen={juego.imagen} />
+      ))}
+    </div>
+  </main>
+</Layout>

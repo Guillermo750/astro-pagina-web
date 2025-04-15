@@ -1,11 +1,60 @@
 ---
-import Welcome from '../components/Welcome.astro';
+
+
 import Layout from '../layouts/Layout.astro';
+import Card  from '../components/Card.astro';
+import '../styles/global.css';
+
+import imagen1 from '../assets/bienvenido-gaming-1024x576.webp';
+import imagen2 from '../assets/gamer-playing-with-led-lights-1024x576.webp';
+import imagen3 from '../assets/consola-moderna-1024x576.webp';
+import imagen4 from '../assets/unete-a-nuestra-comunidad-1024x576.webp';
+import fondo from '../assets/33477550306_345ee30b37_b.jpg';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Videojuegos">
+	<main>
+		<!-- SECCIÓN PRINCIPAL IMAGEN DE FONDO CON H1 -->
+		<section class="relative w-full bg-cover bg-center py-8 min-h-[500px] md:h-[650px] bg-[url('../assets/33477550306_345ee30b37_b.jpg')]">
+			<div class="flex flex-col justify-center items-center text-center h-full w-full">
+				<div class="w-full max-w-3xl text-black text-3xl">
+					<h1>GamerZone: Tu hogar en el mundo de los videojuegos</h1>
+				</div>
+			</div>
+		</section>
+
+	  	<!-- CARD DE TEXTO + IMÁGENES -->
+		<div class="py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto">
+			<Card
+				href=""
+				title="¡Bienvenido al Futuro del Gaming!" 
+				body="Sumérgete en un universo donde la diversión no tiene límites. Aquí, cada pixel cuenta una historia y cada juego es una nueva aventura esperando ser descubierta."
+				image={imagen1.src}
+			/>
+
+			<Card
+				href=""
+				title="¿Estás Listo para el Desafío?"
+				body="Desde épicas batallas hasta emocionantes carreras, nuestro espacio está diseñado para todos los tipos de gamers. Ya seas un guerrero experimentado o un novato curioso, aquí encontrarás la inspiración que necesitas para llevar tu experiencia de juego al siguiente nivel."
+				image={imagen2.src}
+			/>
+
+			<Card
+				href=""
+				title="Lo Último en Tecnología"
+				body="Explora las innovaciones que están transformando la forma en que jugamos. Las consolas más avanzadas, los gráficos más impresionantes y las experiencias más inmersivas están a solo un clic de distancia."
+				image={imagen3.src}
+			/>
+
+			<Card
+				href=""
+				title="Únete a Nuestra Comunidad"
+				body="Conéctate con otros apasionados del Gaming. Comparte tus logros, discute estrategias y encuentra amigos que comparten tu amor por los videojuegos. ¡La diversión es aún mejor cuando se comparte!"
+				image={imagen4.src}
+			/>
+		</div>
+	</main>
 </Layout>

@@ -1,0 +1,43 @@
+---
+interface Props {
+	href: string;
+	title: string;
+	body: string;
+	image?: string;
+}
+
+const { href, title, body, image } = Astro.props;
+---
+
+<a href={href} class="block rounded-md bg-white transition-transform hover:scale-105 text-center">
+	{image && <img src={image} alt={title} class="w-full h-auto object-cover aspect-video" />}
+	<div class="p-4">
+		<h3 class="text-2xl font-semibold text-gray-900 mb-2">{title}</h3>
+		<p class="text-gray-700 text-sm">{body}</p>
+	</div>
+</a>
+
+<!-- <style>
+	.card {
+		padding: 0.5rem;
+		border-radius: 0.75rem; /* Bordes redondeados */
+		text-decoration: none;
+		color: white; /* Texto blanco */
+		background-color: #rgb(34,36,46);
+		text-decoration: none;
+		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+		border: 1px solid #33343C; /* Borde morado */
+		width: calc(100% - 1.5rem); /* Ajuste del ancho */
+	}
+	.card:hover {
+		background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con opacidad al pasar el mouse */
+	}
+	h3 {
+		margin-bottom: .5rem;
+		font-size: clamp(1.2rem, calc(1vw + .5rem), 1.5rem);
+	}
+
+	.card-container{
+		grid-template-columns:auto-fit;
+	} 
+</style>-->
