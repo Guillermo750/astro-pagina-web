@@ -10,20 +10,20 @@ Dentro del proyecto Astro, estarán las siguientes carpetas y archivos:
 │   └── favicon.svg
 ├── src/
 │   ├── assets/
-│   │   └── Imágenes
+│       └── Imágenes
 │   ├── components/
-│   │   └── Card.astro
-│   │   └── Game.astro
-│   │   └── Header.astro
-│   │   └── Hero.astro
+│       └── Card.astro
+│       └── Game.astro
+│       └── Header.astro
+│       └── Hero.astro
 │   ├── layouts/
-│   │   └── Layout.astro
+│       └── Layout.astro
 │   └── pages/
 │       └── index.astro
 │       └── juegos.astro
 │       └── consola.astro
 │       └── blog.astro
 │   ├── styles/
-│   │   └── global.css
+│       └── global.css
 └── package.json
 ```
