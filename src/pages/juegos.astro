@@ -1,25 +1,121 @@
 ---
-/*IMPORTAMOS LOS ARCHIVOS Y LAS HOJAS DE ESTILOS DE TAILWINDS PARA QUE FUNCIONE*/
+/*IMPORTAMOS LOS ARCHIVOS Y LA HOJA DE ESTILO DE TAILWIND PARA QUE FUNCIONE*/
 import Layout from '../layouts/Layout.astro';
+import Card  from '../components/Card.astro';
 import Game  from '../components/Game.astro';
+import Hero from '../components/Hero.astro';
 import '../styles/global.css';
 
 // Importa tus imágenes si están en src/assets
-import imagenJuego1 from '../assets/nintendoswitchzelda-768x432.webp'; // Reemplaza con las rutas de tus imágenes de juego
-import imagenJuego2 from '../assets/juego2.jpg';
-import imagenJuego3 from '../assets/juego3.jpg';
-// ... importa todas las imágenes de tus juegos
+import imagenConsola1 from '../assets/nintendoswitchzelda-768x432.webp'; // Reemplaza con las rutas de tus imágenes de juego
+import imagenJuego1 from '../assets/Foto-Zelda-nuevo-1024x576.webp';
+import imagenJuego2 from '../assets/foto-Zelda-1024x576.webp';
+import imagenJuego3 from '../assets/2024100314392000-16851BE00BC6068871FE49D98876D6C5-1024x576.webp';
+
+import imagenConsola2 from '../assets/PS5-768x432.webp';
+import imagenJuego4 from '../assets/survival-horror-the-last-of-us-part-ii-poslednie-iz-nas-chas-1024x576.jpg';
+import imagenJuego5 from '../assets/marvel-s-spider-man-miles-morales-ps5-playstation-5-game-igr-1024x576.jpg';
+import imagenJuego6 from '../assets/Horizon-Forbidden-West.webp';
+
+import imagenConsola3 from '../assets/XBOX-768x432.webp';
+import imagenJuego7 from '../assets/halo-1024x576.webp';
+import imagenJuego8 from '../assets/gears5-1024x576.webp';
+import imagenJuego9 from '../assets/forza-1024x576.webp';
 
 ---
 
 <Layout title="Nuestros Juegos">
 
+  <!-- <Hero 
+    title='Sumérgete en la Acción'
+		image={.src}
+  /> -->
+  <!-- Imagen de fondo '' y este h1 'Sumérgete en la Acción' 
+   
+  <h1 class="text-4xl md:text-6xl font-bold text-white text-center">Sumérgete en la Acción</h1>
+  -->
+
   <Game 
     title="Nintendo Switch: La diversión nunca termina"
-    body="Descubre la versatilidad de Nintendo Switch, la consola que te permite jugar en casa o en cualquier lugar. Con una biblioteca de juegos variada, desde grandes éxitos hasta títulos indie, hay algo para todos los gustos."
-    image={imagenJuego1.src}
   />
 
-  <!-- CARD DE TEXTO + IMÁGENES -->
+  <!-- 1º CARD  DE TEXTO + IMÁGENES -->
+  <div class="py-8 grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto ">
+		<Card
+			href=""
+			title="The Legend of Zelda: Tears of the Kingdom" 
+			body="Embárcate en una aventura épica en el vasto mundo de Hyrule. Descubre secretos antiguos y enfréntate a poderosos enemigos en esta nueva entrega de la legendaria saga."
+			image={imagenJuego1.src}
+		/>
 
+		<Card
+			href=""
+			title="The Legend of Zelda: Breath of the Wild"
+			body="Un mundo abierto lleno de aventuras te espera en este nuevo capítulo de la saga de The Legend of Zelda. Explora Hyrule a tu ritmo y descubre sus secretos."
+      image={imagenJuego2.src}
+		/>
+
+		<Card
+			href=""
+			title="Mario Kart 8 Deluxe: La Carrera Definitiva"
+			body="Esta versión Deluxe incluye todos los circuitos y personajes del Mario Kart 8 original de Wii U, además de nuevos personajes, modos de batalla y la posibilidad de llevar dos objetos a la vez."
+			image={imagenJuego3.src}
+		/>
+	</div>
+  
+  <Game 
+    title="PlayStation: La potencia de la consola de Sony"
+  />
+
+  <!-- 2º CARD DE TEXTO + IMÁGENES -->
+  <div class="py-8 grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto ">
+    <Card
+      href=""
+      title="The Last of Us Part II" 
+      body="The Last of Us Part II es una obra maestra que eleva los estándares de la narrativa en los videojuegos. Su historia es brutalmente honesta y sus personajes son increíblemente complejos."
+      image={imagenJuego4.src}
+    />
+  
+    <Card
+      href=""
+      title="Conoce a Miles Morales"
+      body="Un spin-off de Spider-Man que presenta a Miles Morales como el nuevo héroe de Nueva York. Combina elementos de la primera entrega con nuevas habilidades y una historia original."
+      image={imagenJuego5.src}
+    />
+  
+    <Card
+      href=""
+      title="Horizon Forbidden West"
+      body="Aloy regresa para explorar nuevas tierras y desentrañar los misterios de una civilización perdida. Ofrece un mundo vasto y detallado lleno de criaturas mecánicas impresionantes."
+      image={imagenJuego6.src}
+    />
+  </div>
+
+  <Game 
+    title="Xbox: Juega con tus amigos en cualquier lugar"
+  />
+
+  <!-- 3º CARD DE TEXTO + IMÁGENES -->
+  <div class="py-8 grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto ">
+    <Card
+        href=""
+        title="Halo Infinite" 
+        body="El regreso de la franquicia Halo con una campaña emocionante y un multijugador competitivo."
+        image={imagenJuego7.src}
+    />
+    
+    <Card
+      href=""
+      title="Gears 5"
+      body="Un juego de disparos con una campaña emocionante y un multijugador competitivo."
+      image={imagenJuego8.src}
+    />
+    
+    <Card
+      href=""
+      title="Horizon Forbidden West"
+      body="Aloy regresa para explorar nuevas tierras y desentrañar los misterios de una civilización perdida."
+      image={imagenJuego9.src}
+    />
+  </div>
 </Layout>

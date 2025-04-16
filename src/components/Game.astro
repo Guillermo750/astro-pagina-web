@@ -1,19 +1,14 @@
 ---
 interface Props {
 	title: string;
-	body: string;
-	image?: string;
 }
 
-const { title, body, image } = Astro.props;
+const { title } = Astro.props;
 ---
 
-<div class="relative w-full">
-	{image && <img src={image} alt={title} class="w-full h-auto" />}
-	<div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center">
-		<h1 class="text-4xl text-white text-center">{title}</h1>
-		<p class="text-base text-white text-center">Descubre la versatilidad de Nintendo Switch, la consola que te permite jugar en casa o en
-			cualquier lugar. Con una biblioteca de juegos variada, desde grandes éxitos hasta títulos indie, hay algo
-			para todos los gustos.</p>
+<div class="relative mx-auto max-w-lg py-8">
+	<div class="text-center">
+	  <h2 class="text-3xl text-white font-bold mb-4">{title}</h2>
 	</div>
+	<!-- {image && <img src={image} alt={title} class="w-full h-auto max-w-md mx-auto mt-8 rounded-md shadow-md" />} -->
 </div>

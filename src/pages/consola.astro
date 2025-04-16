@@ -1,0 +1,55 @@
+---
+/*IMPORTAMOS LOS ARCHIVOS Y LA HOJA DE ESTILO DE TAILWIND PARA QUE FUNCIONE*/
+import Layout from '../layouts/Layout.astro';
+import Card  from '../components/Card.astro';
+import Game  from '../components/Game.astro';
+import Hero from '../components/Hero.astro';
+import '../styles/global.css';
+
+// Importa tus imágenes si están en src/assets
+import imagenConsola1 from '../assets/nintendoswitchzelda-768x432.webp'; // Reemplaza con las rutas de tus imágenes de juego
+import imagenConsola2 from '../assets/PS5-768x432.webp';
+import imagenConsola3 from '../assets/XBOX-768x432.webp';
+
+---
+
+<Layout title="Nuestros Juegos">
+
+  <!-- <Hero 
+    title='Elige tu Plataforma de Juego'
+		image={.src}
+  /> -->
+  <!-- Imagen de fondo '' y este h1 'Elige tu Plataforma de Juego' 
+   
+  <h1 class="text-4xl md:text-6xl font-bold text-white text-center">Elige tu Plataforma de Juego</h1>
+  -->
+
+  <Game 
+    title="Explora las Consolas Disponibles"
+  />
+
+  <!-- 1º CARD  DE TEXTO + IMÁGENES -->
+  <div class="py-8 grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto ">
+    <Card
+      href=""
+      title="Nintendo Switch" 
+      body="Una consola híbrida que te permite jugar tanto en casa como en movimiento. Disfruta de una amplia biblioteca de juegos familiares y exclusivos."
+      image={imagenConsola1.src}
+    />
+    <Card
+      href=""
+      title="PlayStation 5" 
+      body="La consola de Sony, conocida por su potente hardware, gráficos de alta calidad y una gran selección de juegos exclusivos y experiencias inmersivas."
+      image={imagenConsola2.src}
+    />
+    <Card
+      href=""
+      title="Xbox" 
+      body="La consola Xbox, diseñada para ofrecer juegos de última generación con gráficos impresionantes, tiempos de carga rápidos y un rendimiento fluido. Experimenta la evolución del gaming con su avanzada tecnología y sumérgete en mundos ricos y detallados."
+      image={imagenConsola3.src}
+    />
+	</div>
+
+
+  
+</Layout>
