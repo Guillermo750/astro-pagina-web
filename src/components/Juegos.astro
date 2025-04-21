@@ -3,13 +3,13 @@ interface Props {
 	href: string;
 	title: string;
 	body: string;
-	image: string;
+	image?: string;
 }
 
-const {href, title, body, image } = Astro.props;
+const { href, title, body, image } = Astro.props;
 ---
 
-<a href={href} class="block rounded-md bg-white transition-transform hover:scale-105 text-center">
+<a href={href} class="block rounded-md transition-transform hover:scale-105 text-center">
 	{image && <img src={image} alt={title} class="w-full h-auto object-cover aspect-video" />}
 	<div class="p-4">
 		<h3 class="text-2xl font-semibold text-gray-900 mb-6 mt-2">{title}</h3>

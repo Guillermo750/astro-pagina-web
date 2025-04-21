@@ -1,8 +1,54 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+import '../styles/global.css';
+
+/* Este código declara una constante llamada posts y le asigna un array que contiene tres objetos. 
+Cada objeto representa una publicación de un blog y almacena información clave sobre esa publicación: su título, 
+una parte de su URL (denominada "slug"), un breve resumen (el "excerpt") y la fecha de publicación. 
+En esencia, este código crea una lista estructurada de los metadatos de tres entradas de blog. */
+const posts = [
+  {
+    title: 'El Auge de los Juegos Híbridos: ¿La Consola Única del Futuro?',
+    slug: '/blog/el-auge-de-los-juegos-hibridos',
+    excerpt: 'Analizamos la creciente popularidad de las consolas híbridas como la Nintendo Switch y su potencial para convertirse en la solución de juego definitiva.',
+    date: '2025-04-21',
+    image: '../assets/game-console-6603118_1280.webp',
+  },
+  {
+    title: 'Accesorios Imprescindibles para Llevar tu Experiencia de Juego al Siguiente Nivel',
+    slug: '/blog/accesorios-imprescindibles',
+    excerpt: 'Descubre una selección de accesorios clave que pueden mejorar significativamente tu inmersión, comodidad y rendimiento al jugar en tus consolas.',
+    date: '2025-04-22',
+    image: '../assets/vecteezy_game-pad-joystick-and-headphones-on-keyboard-playing-gaming_7764534.webp',
+  },
+  {
+    title: 'La Batalla de las Consolas de Nueva Generación: PlayStation vs. Xbox en 2025',
+    slug: '/blog/batalla-consolas-nueva-generacion',
+    excerpt: 'Un análisis comparativo de las últimas consolas de Sony y Microsoft, examinando sus fortalezas, debilidades y el panorama de juegos y servicios que ofrecen.',
+    date: '2025-04-23',
+    image: '../assets/vecteezy_3d-realistic-game-console-videogame-joystick-or-gamepad_28823416.webp',
+  },
+];
 ---
 
-<Layout title="Formularo de Contacto">
-        <!-- CÓDIGO PARA GENERAR EL FORMULARIO DE CONTACTO -->
-         <h1>sdsdasd</h1>
+<Layout title="Mi Blog">
+  <main class="container mx-auto py-8 text-white">
+    <h1 class="text-3xl font-bold mb-6 text-center">Mi Blog Personal</h1>
+    <ul class="space-y-4">
+      {posts.map((post) => (
+        <>
+          <li class="bg-gray-800 p-4 rounded-md shadow-md">
+            <img src={post.image} alt={post.title} class="w-full h-48 object-cover rounded-t-md mb-4" />
+            <h2 class="text-xl font-semibold mb-2">
+              <a href={post.slug} class="text-blue-400 hover:underline">{post.title}</a>
+            </h2>
+            <p class="text-sm text-gray-500">Publicado el: {post.date}</p>
+            <p class="text-gray-400">{post.excerpt}</p>
+            <a href={post.slug} class="inline-block mt-2 text-blue-500 hover:underline">Leer más</a>
+          </li>
+        </>
+      ))}
+    </ul>
+  </main>
 </Layout>

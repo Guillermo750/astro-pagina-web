@@ -5,12 +5,25 @@ import Card  from '../components/Card.astro';
 import Game  from '../components/Game.astro';
 import Hero from '../components/Hero.astro';
 import '../styles/global.css';
+import { accesoriosPorConsola } from '../data/accesorios-data.js';
 
 // Importa tus imágenes si están en src/assets
 import imagenConsola1 from '../assets/nintendoswitchzelda-768x432.webp'; // Reemplaza con las rutas de tus imágenes de juego
 import imagenConsola2 from '../assets/PS5-768x432.webp';
 import imagenConsola3 from '../assets/XBOX-768x432.webp';
 
+
+import imagenAccesorio1 from '../assets/joy-con-1024x576.webp'
+import imagenAccesorio2 from '../assets/controller.webp'
+import imagenAccesorio3 from '../assets/../assets/funda-de-proteccion.webp'
+
+import imagenAccesorio4 from '../assets/dualsense-1024x683.webp'
+import imagenAccesorio5 from '../assets/playStation-vr2-1-1024x576.webp'
+import imagenAccesorio6 from '../assets/playstation-plus-1.webp'
+
+import imagenAccesorio7 from '../assets/controlador-xbox.webp'
+import imagenAccesorio8 from '../assets/xbox_game_pass_ultimate-1024x576.webp'
+import imagenAccesorio9 from '../assets/Xbox-Series-S-1024x576.webp'
 ---
 
 <Layout title="Nuestros Juegos">
@@ -48,5 +61,99 @@ import imagenConsola3 from '../assets/XBOX-768x432.webp';
 	</div>
 
   <!-- AQUÍ VAN LOS ACCESORIOS... DE LAS CONSOLAS -->
+  <Game 
+    title="Accesorios para Nintendo Switch"
+  />
+  <div class="py-8 grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto ">
+
+    <Card 
+      href=""
+      title="Joy-Con Adicional" 
+      body="Un par de mandos versátiles."
+      image={imagenAccesorio1.src}
+    />
+    <Card 
+      href=""
+      title="Pro Controller" 
+      body="Mando tradicional."
+      image={imagenAccesorio2.src}
+      />
+    <Card 
+      href=""
+      title="Funda de Protección" 
+      body="Mantén tu consola portátil o mando a salvo de golpes."
+      image={imagenAccesorio3.src}
+    />
+
+  </div>
+  <!-- Este método de JavaScript toma el objeto accesoriosPorConsola y devuelve un array de arrays. 
+  Cada sub-array contiene dos elementos: la clave (el nombre de la consola, como "Nintendo Switch") 
+  y el valor (el array de accesorios para esa consola).
+
+  Estás utilizando la función map() para iterar sobre cada uno de estos sub-arrays. 
+  Por cada sub-array, estás extrayendo dos variables -->
+   <!--<div class="py-8 container mx-auto text-white">
+    {Object.entries(accesoriosPorConsola).map(([consola, accesorios]) => (
+        <h3 class="text-2xl font-semibold mb-4">{consola}</h3>
+        <ul>
+          {accesorios.map((accesorio) => (
+            <li class="mb-2">
+              <strong class="font-semibold">{accesorio.nombre}:</strong> {accesorio.descripcion}
+            </li>
+          ))}
+        </ul>
+    ))}
+  </div> -->
+  
+  <Game 
+    title="Accesorios para PlayStation"
+  />
+  
+  <div class="py-8 grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto ">
+    <Card 
+      href=""
+      title="DualSense" 
+      body="Mando innovador de PS5."
+      image={imagenAccesorio4.src}
+    />
+    <Card 
+      href=""
+      title="PlayStation VR" 
+      body="Sumérgete en mundos virtuales inmersivos con el dispositivo de realidad virtual de PlayStation."
+      image={imagenAccesorio5.src}
+      />
+    <Card 
+      href=""
+      title="PlayStation Plus" 
+      body="Desbloquea todo el potencial de tu PlayStation con una suscripción a PlayStation Plus."
+      image={imagenAccesorio6.src}
+    />
+
+  </div>
+
+  <Game 
+    title="Accesorios para Nintendo Xbox"
+  />
+  <div class="py-8 grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto ">
+
+    <Card 
+      href=""
+      title="Wireless Controller" 
+      body="Mando cómodo y ergonómico."
+      image={imagenAccesorio7.src}
+    />
+    <Card 
+      href=""
+      title="Xbox Game Pass Ultimate" 
+      body="Obtén acceso ilimitado a una enorme biblioteca de cientos de juegos de alta calidad para consola."
+      image={imagenAccesorio8.src}
+      />
+    <Card 
+      href=""
+      title="Xbox Series X/S" 
+      body="Experimenta la velocidad y el rendimiento de la última generación de consolas Xbox."
+      image={imagenAccesorio9.src}
+    />
+  </div>
   
 </Layout>
