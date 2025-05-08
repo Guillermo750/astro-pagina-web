@@ -68,6 +68,7 @@ const votos = defineTable({
     },
   ]
 });
+
 export default defineDb({
   tables: {
     temas,
