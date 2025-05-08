@@ -1,12 +1,12 @@
 // db/config.ts
-import { defineDb, defineTable, column, now } from 'astro:db';
+import { defineDb, defineTable, column, NOW } from 'astro:db';
 
 const temas = defineTable({
   columns: {
     id: column.number({ primaryKey: true, autoIncrement: true }),
     nombre: column.text({ length: 100, unique: true, notNull: true }),
     descripcion: column.text(),
-    fecha_creacion: column.date({ default: now }),
+    fecha_creacion: column.date({ default: NOW }),
   },
 });
 
@@ -17,7 +17,7 @@ const usuarios = defineTable({
     nombre_usuario: column.text({ length: 50, notNull: true }),
     email: column.text({ length: 100, unique: true, notNull: true }),
     password: column.text({ length: 255, notNull: true }),
-    fecha_registro: column.date({default: now}),
+    fecha_registro: column.date({default: NOW}),
   },
 });
 
@@ -28,8 +28,8 @@ const publicaciones = defineTable({
     titulo: column.text({ length: 50, notNull: true }),
     texto: column.text({ length: 50, notNull: true }),
     id_tema: column.number({ notNull: true }),
-    fecha_creacion: column.date({ default: now }),
-    fecha_edicion: column.date({ default: now, onUpdate: now }),
+    fecha_creacion: column.date({ default: NOW }),
+    fecha_edicion: column.date({ default: NOW, onUpdate: NOW }),
   },
 
 });
@@ -40,7 +40,7 @@ const comentarios = defineTable({
     id_usuario: column.number({ notNull: true }),
     id_publicacion: column.number({ notNull: true }),
     contenido: column.text(),
-    fecha_creacion: column.date({ default: now }),
+    fecha_creacion: column.date({ default: NOW }),
     fecha_edicion: column.date(),
   },
   // EJEMPLO DE CLAVE FORÁNEAS PARA LAS RELACIONES ENTRE LAS TABLAS
@@ -59,7 +59,7 @@ const votos = defineTable({
     id_publicacion: column.number(),
     id_comentario: column.number(),
     tipo_voto: column.enum(['up', 'down']).notNull(),
-    fecha_voto: column.date({default: now}),
+    fecha_voto: column.date({default: NOW}),
   },
   indexes: [
     {
