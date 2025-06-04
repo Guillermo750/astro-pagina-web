@@ -1,6 +1,6 @@
 // MIRAR LA DOCUMENTACIÓN --> https://docs.astro.build/en/guides/integrations-guide/db/
 // db/config.ts
-import { defineDb, defineTable, column, NOW } from 'astro:db';
+/*import { defineDb, defineTable, column, NOW } from 'astro:db';
 
 const temas = defineTable({
   columns: {
@@ -13,8 +13,7 @@ const temas = defineTable({
 
 const usuarios = defineTable({ 
   columns: {
-    id: column.number({ primaryKey: true, autoIncrement: true }),
-    id_user: column.number({ unique: true, notNull: true }),
+    id_user: column.number({ primaryKey: true, autoIncrement: true }),
     nombre_usuario: column.text({ length: 50, unique: true, notNull: true }),
     email: column.text({ length: 100, unique: true, notNull: true }),
     password: column.text({ length: 255, unique: true, notNull: true }),
@@ -25,7 +24,7 @@ const usuarios = defineTable({
 const publicaciones = defineTable({
   columns: {
     id_publica: column.number({ primaryKey: true, autoIncrement: true }),
-    id_user: column.number({ unique: true, notNull: true }),
+    id_user: column.number(),
     titulo: column.text({ unique: true, length: 50, notNull: true }),
     texto: column.text({ length: 50, unique: true, notNull: true }),
     id_tema: column.number({ unique: true, notNull: true }),
@@ -43,7 +42,7 @@ const publicaciones = defineTable({
 const comentarios = defineTable({
   columns: {
     id_coment: column.number({ primaryKey: true, autoIncrement: true }),
-    id_usuario: column.number({ unique: true, notNull: true }),
+    id_usuario: column.number(),
     id_publicacion: column.number({ unique: true, notNull: true }),
     contenido: column.text(),
     fecha_creacion: column.date({ default: NOW }),
@@ -63,13 +62,13 @@ const votos = defineTable({
     id_usuario: column.number({ unique: true, notNull: true }),
     id_publicacion: column.number(),
     id_comentario: column.number(),
-    tipo_voto: column.enum(['up', 'down']).notNull(),
+    tipo_voto: column.text(),
     fecha_voto: column.date({default: NOW}),
   },
   foreignKeys: [
     {
       columns: ["id_usuario", "id_publicacion", "id_comentario"],
-      references: () => [usuarios.columns.id_user, publicaciones.columns.id_publica, comentarios.id_coment],
+      references: () => [usuarios.columns.id_user, publicaciones.columns.id_publica, comentarios.columns.id_coment],
     },
   ], 
   indexes: [
@@ -88,21 +87,4 @@ export default defineDb({
     comentarios,
     votos,
   },
-});
-
-
-/*relations: (({ publicaciones, usuarios, temas, comentarios, votos }) => ({
-    publicaciones: {
-      id_user: publicaciones.id_user.references(usuarios.id_user),
-      id_tema: publicaciones.id_tema.references(temas.id),
-    },
-    comentarios: {
-      id_usuario: comentarios.id_usuario.references(usuarios.id), // Asumo que 'usuarios' tiene 'id' como clave primaria
-      id_publicacion: comentarios.id_publicacion.references(publicaciones.id_publica),
-    },
-    votos: {
-      id_usuario: votos.id_usuario.references(usuarios.id),     // Asumo que 'usuarios' tiene 'id' como clave primaria
-      id_publicacion: votos.id_publicacion.references(publicaciones.id_publica),
-      id_comentario: votos.id_comentario.references(comentarios.id),
-    },
-  })),*/
+});*/
