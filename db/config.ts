@@ -1,6 +1,6 @@
 // MIRAR LA DOCUMENTACIÓN --> https://docs.astro.build/en/guides/integrations-guide/db/
 // db/config.ts
-/*import { defineDb, defineTable, column, NOW } from 'astro:db';
+import { defineDb, defineTable, column, NOW } from 'astro:db';
 
 const temas = defineTable({
   columns: {
@@ -87,4 +87,4 @@ export default defineDb({
     comentarios,
     votos,
   },
-});*/
+});

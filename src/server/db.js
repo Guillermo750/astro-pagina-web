@@ -1,5 +1,5 @@
 // server/db.js (ejemplo para MySQL)
-/* import mysql from 'mysql2/promise';
+import mysql from 'mysql2/promise';
 
 const dbConfigComunidad = {
   host: import.meta.env.DATABASE_HOST1,
@@ -45,4 +45,4 @@ async function getConnectionForo() {
   return connectionForo;
 }
 
-export { getConnectionComunidad, getConnectionForo };*/
+export { getConnectionComunidad, getConnectionForo };

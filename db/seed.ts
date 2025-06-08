@@ -1,4 +1,4 @@
-/*import { db, temas, usuarios, publicaciones, comentarios, votos } from 'astro:db';
+import { db, temas, usuarios, publicaciones, comentarios, votos } from 'astro:db';
 
 // Función para validar tipo_voto
 const allowedVotes = ['up', 'down'];
@@ -72,4 +72,4 @@ export default async function seed() {
 	}
 }
 
-seed();*/
+seed();
